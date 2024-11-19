@@ -5,7 +5,7 @@ export const authConfig = {
     callbacks: {
         authorized({ auth, request: { nextUrl } }) {
             const isLoggedIn = !!auth?.user
-            const isPrivateRoutes = nextUrl.pathname.startsWith('/private')
+            const isPrivateRoutes = nextUrl.pathname.startsWith('/dashboard')
             const isAuthRoutes = nextUrl.pathname.startsWith('/auth')
 
             if(!isLoggedIn && isPrivateRoutes){
@@ -13,7 +13,7 @@ export const authConfig = {
             }
 
             if(isLoggedIn && isAuthRoutes) {
-                return Response.redirect(new URL('/private', nextUrl))
+                return Response.redirect(new URL('/dashboard', nextUrl))
             }
 
             return true

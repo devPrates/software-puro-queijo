@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { Header } from "./header";
 
 export default function Home() {
   return (
+    <>
+    <Header />
     <main className="w-full  max-w-3xl mx-auto p-10 border rounded-md">
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-xl font-medium text-gray-600 mb-6">Página pública</h1>
@@ -13,5 +16,6 @@ export default function Home() {
         </Link>
       </div>
     </main>
+    </>
   )
 }

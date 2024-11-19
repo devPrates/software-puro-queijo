@@ -1,21 +1,17 @@
-import Image from "next/image";
+import { LogOutIcon } from "lucide-react";
 import { signOut } from "./auth/provider";
 
 export function UserSettings({ image }: { image?: string | null | undefined }) {
   return (
     <div className="flex items-center gap-4">
-      <Image 
-        src={image || '/user-40x40.jpg'} 
-        alt={`Avatar de ${image}`} 
-        width={40} 
-        height={40}
-        className="rounded-full" 
-      />
       <form action={async () => {
         'use server' 
         await signOut()
       } }>
-        <button type="submit" className="hover:underline">Sign out</button>
+        <button type="submit" className="hover:underline flex gap-2 text-red-500 justify-center">
+          <LogOutIcon />
+          Sair
+        </button>
       </form>
     </div>
   )

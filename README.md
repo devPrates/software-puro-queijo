@@ -1,19 +1,37 @@
-## Auth JS Beta w/ Server Actions
+# Software para a empresa Puro Quejo - Navirai, MS 
+<!-- Insira o nome do projeto aqui -->
 
-### Introdução
-Este projeto, intitulado 'Auth JS Beta w/ Server Actions', é um tutorial prático para aprender a implementar autenticação em aplicações web usando Next.js, Zod para validação de esquemas, e @vercel/postgres para a integração de banco de dados SQL. Este tutorial é ideal para desenvolvedores interessados em aplicações web modernas, com foco em práticas de codificação limpa e funcional.
+## Descrição  
+- **Objetivo**: <!-- Descreva o objetivo principal do sistema -->  
+- **Relevância**: <!-- Explique por que este projeto é importante ou útil -->  
+- **Problema Resolvido**: <!-- Explique qual problema específico o projeto resolve -->  
 
-### Pré-requisitos
-Antes de começar, certifique-se de ter Node.js instalado em seu ambiente de desenvolvimento.
+## Tecnologias Utilizadas  
+- **Linguagens**: <!-- Liste as linguagens utilizadas -->  
+- **Frameworks**: <!-- Liste os frameworks utilizados -->  
+- **Bibliotecas**: <!-- Liste as bibliotecas utilizadas -->  
+- **Outros**: <!-- Qualquer outra tecnologia relevante -->  
 
-### Instalação
-Siga os passos abaixo para configurar o ambiente do projeto.
+## Funcionalidades  
+- Funcionalidade 1  
+- Funcionalidade 2  
+- ...  
 
-1. Instalação das dependências do projeto
-Para criar um novo projeto Next.js, execute o seguinte comando:
-```bash
-npm i
-```
+## Demonstração  
+Acesse: <a href="https://software-puroqueijo.vercel.app/">vercel.com/dashboard</a> 
+<!-- Inclua links para imagens, GIFs ou vídeos demonstrando o projeto -->  
 
-2. Crie um repositório e integração ao banco de dados (Vercel Postgres)
+---
+
+## Instalação  
+
+### Requisitos  
+- Node
+- <!-- Liste os requisitos para rodar o projeto, como versões de linguagens, banco de dados, etc. -->
+
+### Passos para Instalação  
+1. Clone este repositório:  
+   ```bash  
+   git clone https://github.com/seuusuario/seurepositorio.git  
+
 Acesse: <a href="vercel.com/dashboard">vercel.com/dashboard</a>

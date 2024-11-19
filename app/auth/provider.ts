@@ -17,7 +17,6 @@ const providers = {
 
                 if (parsedCredentials.success) {
                     const { email, password } = parsedCredentials.data
-                    console.log(email)
                     const user = await getUserByEmail(email)
 
                     if (!user) {

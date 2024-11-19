@@ -30,9 +30,15 @@ export async function createTodo(formData: FormData) {
         redirect('/todos')
 }
 
-export async function getTodos() {
+export async function getFilteredTodos(query: string) {
     try {
-        const { rows } = await sql`SELECT * FROM todos`
+        const { rows } = await sql`
+            SELECT * 
+            FROM todos
+            WHERE todos.todo
+            ILIKE ${`%${query}%`}
+            ORDER BY todos.created_at DESC
+        `
         return rows
     } catch (error) {
         throw new Error('Falha ao buscar dados no banco de Dados')

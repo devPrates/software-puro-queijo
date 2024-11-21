@@ -4,14 +4,11 @@ import { Button } from "../ui/button";
 
 export default function Header() {
     return (
-<<<<<<< HEAD
         <section className="h-[90vh] flex justify-center items-center" id="home">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2">
                 <div className="w-full flex flex-col items-center justify-center gap-3">
                     <h1 className={`${montserrat.className} text-website-secundary font-black text-[64px] text-center w-[80%]`}>A hora mais saborosa do dia</h1>
-=======
-        <section className="h-screen bg-website-primary" id="home">
->>>>>>> bdc81e047eafb614e0fbea32534dad01c44c632a
+
 
                     <p className={`${montserrat.className} w-[80%]`}>Characterised by soft lighting, vintage colour schemes and quirky costumes, these generative 3D TinyFaces are the addition to your NFT collection youve been waiting for.</p>
 

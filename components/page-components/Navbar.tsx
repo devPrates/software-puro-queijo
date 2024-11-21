@@ -7,10 +7,17 @@ import { Fragment } from "react";
 import Image from "next/image";
 import { courgette } from "#/types/fonts";
 
+const handleScroll = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" }); // Rola suavemente até o elemento
+  }
+};
+
 export default function Navbar() {
   return (
     <>
-      <Popover className="bg-website-primary sticky top-0 flex items-center border-b-2 px-6 py-2 h-20">
+      <Popover className="bg-website-primary sticky top-0 flex items-center px-6 py-2 h-20">
         <div className="container mx-auto flex items-center">
           <div className="flex gap-2 items-center">
             <Image 
@@ -23,10 +30,10 @@ export default function Navbar() {
           </div>
           <div className="grow">
             <div className={`${courgette.className} hidden sm:flex items-center justify-end gap-2 md:gap-8 text-lg text-website-secundary font-bold`} >
-              <Link href="/">Home</Link>
-              <Link href="#sobre">Produtos</Link>
-              <Link href="#planos">Sobre nós</Link>
-              <Link href="#mentoria">Contato</Link>
+              <button onClick={() => handleScroll("home")}> Home </button>
+              <button onClick={() => handleScroll("produtos")}> Produtos</button>
+              <button onClick={() => handleScroll("about")}>Sobre nós</button>
+              <button onClick={() => handleScroll("contact")}>Contato</button>
               <Link
                 href="/auth/login"
                 className="rounded-lg bg-website-secundary px-4 py-1 text-sm font-medium text-white md:text-xl focus:outline-none focus:ring-2 focus:ring-inset">

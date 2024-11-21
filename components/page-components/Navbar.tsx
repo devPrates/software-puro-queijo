@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import { Menu, X } from 'lucide-react';
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import { courgette } from "#/types/fonts";
 
@@ -14,7 +14,34 @@ const handleScroll = (id: string) => {
   }
 };
 
+const sections = ["home", "produtos", "sobre", "contato"];
+
 export default function Navbar() {
+  const [activeSection, setActiveSection] = useState<string>("home");
+
+  useEffect(() => {
+    const onScroll = () => {
+      let currentSection = activeSection;
+  
+      sections.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            currentSection = id;
+          }
+        }
+      });
+  
+      setActiveSection(currentSection);
+    };
+  
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [activeSection]);
+  
   return (
     <>
       <Popover className="bg-website-primary sticky top-0 flex items-center px-6 py-2 h-20">
@@ -30,10 +57,21 @@ export default function Navbar() {
           </div>
           <div className="grow">
             <div className={`${courgette.className} hidden sm:flex items-center justify-end gap-2 md:gap-8 text-lg text-website-secundary font-bold`} >
-              <button onClick={() => handleScroll("home")}> Home </button>
-              <button onClick={() => handleScroll("produtos")}> Produtos</button>
-              <button onClick={() => handleScroll("about")}>Sobre nós</button>
-              <button onClick={() => handleScroll("contact")}>Contato</button>
+              {sections.map((section) => (
+                <button 
+                  key={section} 
+                  onClick={() => 
+                  handleScroll(section)}
+                  className={`${
+                    activeSection === section
+                      ? "text-white"
+                      : ""
+                  } hover:underline`}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+
+              ))}
               <Link
                 href="/auth/login"
                 className="rounded-lg bg-website-secundary px-4 py-1 text-sm font-medium text-white md:text-xl focus:outline-none focus:ring-2 focus:ring-inset">

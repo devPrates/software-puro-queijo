@@ -1,33 +1,75 @@
 import { montserrat } from "#/types/fonts";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function Header() {
     return (
-        <section className="h-[90vh] flex justify-center items-center" id="home">
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2">
-                <div className="w-full flex flex-col items-center justify-center gap-3">
-                    <h1 className={`${montserrat.className} text-website-secundary font-black text-[64px] text-center w-[80%]`}>A hora mais saborosa do dia</h1>
-
-
-                    <p className={`${montserrat.className} w-[80%]`}>Characterised by soft lighting, vintage colour schemes and quirky costumes, these generative 3D TinyFaces are the addition to your NFT collection youve been waiting for.</p>
-
-                    <div className="flex justify-center gap-5 w-full pt">
-                        <Button size={"lg"}>Ver Produtos</Button>
-                        <Button size={"lg"} className="bg-website-secundary">Sobre a Empresa</Button>
+        <div className="min-h-screen bg-gradient-to-br from-orange-100 to-orange-300" id='home'>
+            {/* Layout para telas pequenas (abaixo de md) */}
+            <div className="lg:hidden relative h-screen flex items-center justify-center overflow-hidden">
+                <Image
+                    src="/headerImage.jpg"
+                    alt="Hero background"
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100}
+                    className="absolute z-0"
+                />
+                <div className="relative z-10 text-center text-white px-4 sm:px-6">
+                    <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+                        A hora mais saborosa do dia
+                    </h1>
+                    <p className="text-xl sm:text-2xl mb-8 max-w-3xl mx-auto">
+                        Descubra as possibilidades infinitas da nossa plataforma inovadora.
+                    </p>
+                    <div className="flex flex-wrap justify-center items-center gap-3">
+                        <Link href="/signup">
+                            <Button size={"lg"}> Comece Agora </Button>
+                        </Link>
+                        <Link href="/learn-more">
+                            <Button size={"lg"} className="bg-website-secundary"> Comece Agora </Button>
+                        </Link>
                     </div>
                 </div>
+            </div>
 
-                <div className="w-full flex items-center justify-center">
-                    <Image 
-                        src='/headerImage.jpg'
-                        alt="Imagem de divulgação da puro queijo"
-                        width={480}
-                        height={700}
-                        className="rounded-xl"
-                    />
+            {/* Layout para telas médias e grandes (md e acima) */}
+            <div className="hidden lg:flex items-center justify-center min-h-screen">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex flex-row items-center justify-between gap-12">
+                        {/* Conteúdo à direita */}
+                        <div className="w-1/2 text-center flex flex-col justify-center items-center">
+                            <h1 className={`${montserrat.className} text-5xl lg:text-6xl font-extrabold mb-6 text-gray-800`}>
+                                A hora mais saborosa do dia
+                            </h1>
+                            <p className="text-xl lg:text-2xl text-center mb-8 text-gray-600 max-w-lg">
+                                Descubra as possibilidades infinitas da nossa plataforma inovadora.
+                            </p>
+                            <div className="flex flex-row justify-center items-center gap-3">
+                                <Link href="/signup">
+                                    <Button size={"lg"}> Comece Agora </Button>
+                                </Link>
+                                <Link href="/learn-more">
+                                    <Button size={"lg"} className="bg-website-secundary"> Comece Agora </Button>
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Imagem à esquerda */}
+                        <div className="w-1/2 flex justify-center">
+                            <div className="relative lg:h-[60vh] lg:w-[50vh] aspect-video rounded-xl overflow-hidden shadow-xl">
+                                <Image
+                                    src="/headerImage.jpg"
+                                    alt="Hero image"
+                                    fill
+                                    className="transition-transform duration-300 hover:scale-105"
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
     )
 }

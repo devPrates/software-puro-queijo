@@ -8,13 +8,14 @@ import Products from "#/components/page-components/Products";
 
 export default function Home() {
   return (
-    <>
+    <main className="flex flex-col">
       <Navbar />
       <Header />
       <Products />
       <About />
       <Contact />
       <Footer />
-    </>
+    </main>
+
   )
 }

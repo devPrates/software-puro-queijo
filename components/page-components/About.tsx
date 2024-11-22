@@ -14,7 +14,7 @@ export default function About() {
               fazer a diferença em cada projeto que realizamos.
             </p>
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-gray-800">Nossa Essência</h3>
+              <h3 className={`${courgette.className} text-2xl font-semibold`}>Nossa Essência</h3>
               <ul className="space-y-2">
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

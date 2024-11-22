@@ -5,7 +5,7 @@ export const products: Product[] = [
         id: 1,
         name: "Pão de queijo",
         category: "Pão de Queijo",
-        image: "/placeholder.svg",
+        image: "/pao.jpg",
         description: "Delicioso pão de queijo mineiro, feito com queijo curado e polvilho de alta qualidade.",
         sizing: ["1kg", "500g", "250g"]
     },
@@ -13,7 +13,7 @@ export const products: Product[] = [
         id: 2,
         name: "Pão de queijo Calabresa",
         category: "Pão de Queijo",
-        image: "/placeholder.svg",
+        image: "/pao.jpg",
         description: "Delicioso pão de queijo mineiro, feito com queijo curado e polvilho de alta qualidade.",
         sizing: ["1kg", "500g", "250g"]
     },
@@ -21,7 +21,7 @@ export const products: Product[] = [
         id: 3,
         name: "Pão de queijo Gourmet",
         category: "Pão de Queijo",
-        image: "/placeholder.svg",
+        image: "/pao.jpg",
         description: "Delicioso pão de queijo mineiro, feito com queijo curado e polvilho de alta qualidade.",
         sizing: ["1kg", "500g", "250g"]
     },
@@ -53,7 +53,7 @@ export const products: Product[] = [
         id: 7,
         name: "Nhoque Tradicional",
         category: "Nhoque",
-        image: "/placeholder.svg",
+        image: "/nhoque.jpg",
         description: "Delicioso pão de queijo mineiro, feito com queijo curado e polvilho de alta qualidade.",
         sizing: ["1kg", "500g", "250g"]
     },
@@ -61,7 +61,7 @@ export const products: Product[] = [
         id: 8,
         name: "Nhoque Mandioca",
         category: "Nhoque",
-        image: "/placeholder.svg",
+        image: "/nhoque.jpg",
         description: "Delicioso pão de queijo mineiro, feito com queijo curado e polvilho de alta qualidade.",
         sizing: ["1kg", "500g", "250g"]
     },
@@ -69,7 +69,7 @@ export const products: Product[] = [
         id: 9,
         name: "Nhoque Batata",
         category: "Nhoque",
-        image: "/placeholder.svg",
+        image: "/nhoque.jpg",
         description: "Delicioso pão de queijo mineiro, feito com queijo curado e polvilho de alta qualidade.",
         sizing: ["1kg", "500g", "250g"]
     },

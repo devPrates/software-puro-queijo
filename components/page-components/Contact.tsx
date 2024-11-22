@@ -2,12 +2,13 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'luc
 import { Button } from "#/components/ui/button"
 import { Input } from "#/components/ui/input"
 import { Textarea } from "#/components/ui/textarea"
+import { courgette } from '#/types/fonts'
 
 export default function Contact() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+    <section className="min-h-screen flex justify-center items-center py-16 px-4 sm:px-6 lg:px-8" id='contato'>
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Entre em Contato</h2>
+      <h2 className={`${courgette.className} text-5xl font-bold text-center mb-12`} >Entre em Contato</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="bg-white p-8 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold mb-6">Informações de Contato</h3>

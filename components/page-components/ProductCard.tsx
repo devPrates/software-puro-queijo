@@ -20,8 +20,7 @@ export function ProductCard({ id, name, image, description, sizing }: ProductCar
           <Image
             src={image}
             alt="Pão de Queijo"
-            layout="fill"
-            objectFit="cover"
+            fill
             className="rounded-t-lg"
           />
         </div>

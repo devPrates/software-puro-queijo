@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { courgette } from '#/types/fonts'
 
 export function Footer() {
   return (
@@ -12,11 +13,11 @@ export function Footer() {
               <Image 
                 src="/logo.png" 
                 alt="Logo da Empresa" 
-                width={40} 
-                height={40}
+                width={60} 
+                height={60}
                 className="rounded-full"
               />
-              <span className="text-xl font-bold text-primary">Puro Queijo</span>
+              <span className={`${courgette.className} text-2xl font-bold text-primary mt-3`}><span className="text-website-secundary">Puro</span> Quejo</span>
             </Link>
             <p className="text-sm">
               Fornecendo soluções inovadoras e serviços de qualidade desde 2010.
@@ -24,7 +25,7 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Links Rápidos</h3>
+            <h3 className={`${courgette.className} text-xl font-semibold mb-4`}>Links Rápidos</h3>
             <ul className="space-y-2">
               <li><Link href="/" className="hover:text-primary transition-colors">Início</Link></li>
               <li><Link href="/sobre" className="hover:text-primary transition-colors">Sobre Nós</Link></li>
@@ -34,15 +35,15 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contato</h3>
+            <h3 className={`${courgette.className} text-xl font-bold mb-4`} >Contato</h3>
             <ul className="space-y-2">
               <li className="flex items-center space-x-2">
                 <MapPin size={18} />
-                <span>Av. Paulista, 1000 - São Paulo</span>
+                <span>Rua Exemplo, 123 - São Paulo</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone size={18} />
-                <span>(11) 3456-7890</span>
+                <span>(11) 1234-5678</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail size={18} />
@@ -52,7 +53,7 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Siga-nos</h3>
+            <h3 className={`${courgette.className} text-xl font-bold mb-4`} >Siga-nos</h3>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
                 <Facebook size={24} />

@@ -18,7 +18,7 @@
 - ...  
 
 ## Demonstração  
-Acesse: <a href="https://software-puroqueijo.vercel.app/">vercel.com/dashboard</a> 
+Acesse: <a href="https://software-puroqueijo.vercel.app/">Acessar Deploy do Projeto</a> 
 <!-- Inclua links para imagens, GIFs ou vídeos demonstrando o projeto -->  
 
 ---

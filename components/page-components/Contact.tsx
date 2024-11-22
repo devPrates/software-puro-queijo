@@ -1,55 +1,78 @@
-
-import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react'
+import { Button } from "#/components/ui/button"
+import { Input } from "#/components/ui/input"
+import { Textarea } from "#/components/ui/textarea"
 
 export default function Contact() {
   return (
-    <div className="container mx-auto px-4 py-8" id="contato">
-      <Card className="w-full max-w-4xl mx-auto">
-        <CardHeader>
-          <CardTitle className="text-3xl font-bold text-center">Entre em Contato</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-primary" />
-                <span>Rua Exemplo, 123 - Bairro, Cidade - Estado, 12345-678</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-primary" />
-                <span>(11) 1234-5678</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-primary" />
-                <span>contato@suaempresa.com</span>
-              </div>
-              <div className="flex space-x-4 mt-6">
-                <a href="#" className="text-gray-600 hover:text-primary">
-                  <Facebook className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-600 hover:text-primary">
-                  <Twitter className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-600 hover:text-primary">
-                  <Instagram className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-600 hover:text-primary">
-                  <Linkedin className="h-6 w-6" />
-                </a>
-              </div>
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+    <div className="max-w-7xl mx-auto">
+      <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Entre em Contato</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="bg-white p-8 rounded-lg shadow-md">
+          <h3 className="text-xl font-semibold mb-6">Informações de Contato</h3>
+          <div className="space-y-4">
+            <div className="flex items-start">
+              <MapPin className="w-5 h-5 text-blue-600 mt-1 mr-3" />
+              <p>Rua Exemplo, 123 - Bairro, Cidade - Estado, 12345-678</p>
             </div>
-            <div className="w-full h-64 bg-gray-300 rounded-lg overflow-hidden">
-              <img 
-                src="/placeholder.svg" 
-                alt="Mapa da localização da empresa" 
-                className="w-full h-full object-cover"
-              />
+            <div className="flex items-center">
+              <Phone className="w-5 h-5 text-blue-600 mr-3" />
+              <p>(11) 1234-5678</p>
+            </div>
+            <div className="flex items-center">
+              <Mail className="w-5 h-5 text-blue-600 mr-3" />
+              <p>contato@suaempresa.com</p>
             </div>
           </div>
-        </CardContent>
-      </Card>
+          <h4 className="text-lg font-semibold mt-8 mb-4">Horário de Atendimento</h4>
+          <p>Segunda a Sexta: 9h às 18h</p>
+          <p>Sábado: 9h às 13h</p>
+          <h4 className="text-lg font-semibold mt-8 mb-4">Redes Sociais</h4>
+          <div className="flex space-x-4">
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <Facebook className="w-6 h-6" />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <Instagram className="w-6 h-6" />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <Twitter className="w-6 h-6" />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+        <div className="bg-white p-8 rounded-lg shadow-md">
+          <h3 className="text-xl font-semibold mb-6">Envie-nos uma mensagem</h3>
+          <form className="space-y-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                Nome
+              </label>
+              <Input id="name" placeholder="Seu nome" />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                E-mail
+              </label>
+              <Input id="email" type="email" placeholder="seu@email.com" />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                Mensagem
+              </label>
+              <Textarea id="message" placeholder="Sua mensagem" rows={4} />
+            </div>
+            <Button type="submit" className="w-full">
+              Enviar Mensagem
+            </Button>
+          </form>
+        </div>
+      </div>
     </div>
+  </section>
   )
 }
 

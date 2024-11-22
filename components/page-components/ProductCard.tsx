@@ -1,64 +1,54 @@
-import { useState } from 'react'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "#/components/ui/card"
-import { Button } from "#/components/ui/button"
-import { Badge } from "#/components/ui/badge"
-import { Heart, Star } from 'lucide-react'
 import Image from "next/image"
+import { ChevronRight, Utensils } from 'lucide-react'
+import { Button } from "#/components/ui/button"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "#/components/ui/card"
+import { Separator } from "#/components/ui/separator"
 
 interface ProductCardProps {
   id: number
   name: string
-  price: number
   image: string
   description: string
-  rating: number
-  colors: string[]
+  sizing: string[]
 }
 
-export function ProductCard({ id, name, price, image, description, rating, colors }: ProductCardProps) {
-  const [isFavorite, setIsFavorite] = useState(false)
-
+export function ProductCard({ id, name, image, description, sizing }: ProductCardProps) {
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-[300px]">
       <CardHeader>
-        <div className="flex justify-between items-start">
-          <CardTitle className="text-lg">{name}</CardTitle>
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={() => setIsFavorite(!isFavorite)}
-            aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
-          >
-            <Heart className={isFavorite ? "fill-red-500 text-red-500" : "text-gray-500"} />
-          </Button>
+        <div className="relative w-full h-[200px] mb-4">
+          <Image
+            src={image}
+            alt="Pão de Queijo"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-t-lg"
+          />
+        </div>
+        <div className="flex justify-between items-center">
+          <CardTitle className="text-xl">{name}</CardTitle>
+          <Utensils className="h-6 w-6 text-gray-500" />
         </div>
       </CardHeader>
       <CardContent>
-        <div className="relative h-48 w-full mb-4">
-          <Image
-            src={image}
-            alt={name}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-md"
-          />
-        </div>
-        <p className="text-sm text-gray-600 mb-2">{description}</p>
-        <div className="flex items-center mb-2">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className={`w-4 h-4 ${i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`} />
-          ))}
-          <span className="ml-2 text-sm text-gray-600">({rating})</span>
-        </div>
-        <div className="flex gap-2">
-          {colors.map(color => (
-            <Badge key={color} variant="outline" style={{backgroundColor: color}}>&nbsp;</Badge>
-          ))}
+        <p className="text-sm text-muted-foreground mb-4">
+          {description}
+        </p>
+        <Separator className="my-4" />
+        <div className="text-sm">
+          <p className="font-semibold mb-2">Tamanhos disponíveis:</p>
+          <div className="flex justify-around items-center">
+            {sizing.map((size, index) => (
+              <span className="bg-primary/10 text-primary rounded-full px-3 py-1" key={index}>{size}</span>
+            ))}
+          </div>
         </div>
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <span className="text-xl font-bold">${price.toFixed(2)}</span>
-        <Button>Adicionar ao Carrinho</Button>
+      <CardFooter>
+        <Button className="w-full group">
+          Mais Informações
+          <ChevronRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition" />
+        </Button>
       </CardFooter>
     </Card>
   )

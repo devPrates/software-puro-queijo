@@ -41,7 +41,7 @@ export default function Contact() {
             </div>
             <div className="w-full h-64 bg-gray-300 rounded-lg overflow-hidden">
               <img 
-                src="/placeholder.svg?" 
+                src="/placeholder.svg" 
                 alt="Mapa da localização da empresa" 
                 className="w-full h-full object-cover"
               />
